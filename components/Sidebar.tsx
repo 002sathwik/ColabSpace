@@ -27,7 +27,7 @@ const Sidebar = () => {
             >
               <Image
               src={link.imgUrl} alt={link.label} width={24} height={24}/>
-              <p className="text-lg font-semibold max-lg:hidden">{link.label}</p>
+              <p className=" text-lg font-semibold max-lg:hidden font-poetsen-one-regular">{link.label}</p>
             </Link>
           );
         })}

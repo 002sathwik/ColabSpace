@@ -7,7 +7,7 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,10 +18,17 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        'freeman-regular': ['Freeman', 'sans-serif'],
+        'poetsen-one-regular': ['Poetsen One', 'sans-serif'],
+      },
       colors: {
-        dark:{
-           1:'#1C1F2E',
-           2:'#161925',
+        dark: {
+          1: '#1C1F2E',
+          2: '#161925',
+        },
+        blue:{
+            1:'#0E78f9'
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
