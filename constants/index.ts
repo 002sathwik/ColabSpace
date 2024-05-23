@@ -1,0 +1,27 @@
+ export const sidebarlinks =[
+    {
+        label:'Home',
+        route:'/',
+        imgUrl:'/icons/home.svg'
+    },
+    {
+        label:'Upcomming',
+        route:'/upcoming',
+        imgUrl:'/icons/upcoming.svg'
+    },
+    {
+        label:'History',
+        route:'/history',
+        imgUrl:'/icons/previous.svg'
+    },
+    {
+        label:'Recordings',
+        route:'/recordings',
+        imgUrl:'/icons/recordings.svg'
+    },
+    {
+        label:'Colab',
+        route:'/colab',
+        imgUrl:'/icons/add-personal.svg'
+    },
+]
