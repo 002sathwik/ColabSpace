@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
@@ -10,6 +11,10 @@ const Navbar = () => {
           <span className="text-3xl md:text-3xl">S</span>pace
         </h1>
       </Link>
+      <div className="flex-between gap-5">
+         {/* cleck user */}
+         <MobileNav/>
+      </div>
     </nav>
   );
 };
