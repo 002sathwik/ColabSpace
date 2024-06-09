@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import { Calendar } from "@/components/ui/calendar";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import TimeDisplay from "@/components/TimeDisplay/TimeDisplay";
+import DateDisplay from "@/components/DateDisplay/DateDisplay";
 
 const Home = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -29,8 +31,12 @@ const Home = () => {
             </Dialog>
           </div>
           <div className="flex flex-col gap-2">
-            <h1 className=" text-4xl font-extrabold lg:text-7xl text-white">11:30 AM</h1>
-            <p className="text-lg font-bold text-white text-sky-1 lg:text-2xl">Saturday ,23 March 2024</p>
+            <h1 className=" text-4xl font-extrabold lg:text-7xl text-white">
+              <TimeDisplay />
+            </h1>
+            <p className="text-lg font-bold text-white text-sky-1 lg:text-2xl">
+              <DateDisplay />
+            </p>
           </div>
         </div>
       </div>
