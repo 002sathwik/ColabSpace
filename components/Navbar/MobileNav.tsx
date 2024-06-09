@@ -21,7 +21,7 @@ const MobileNav = () => {
     <section className="w-full max-w-[265px]">
       <Sheet>
         <SheetTrigger asChild>
-          <GiHamburgerMenu className="text-white sm:hidden cursor-pointer " />
+          <GiHamburgerMenu className="text-white sm:hidden w-8 h-7 cursor-pointer " />
         </SheetTrigger>
         <SheetContent side="left" className="border-none text-white bg-dark-1">
           <Link href="/" className="flex items-center gap-1">
