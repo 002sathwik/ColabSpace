@@ -4,6 +4,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import TimeDisplay from "@/components/TimeDisplay/TimeDisplay";
 import DateDisplay from "@/components/DateDisplay/DateDisplay";
+import MeetingTypeList from "@/components/MeetingTypeList/MeetingTypeList";
 
 const Home = () => {
   const [date, setDate] = useState<Date | undefined>(new Date());
@@ -40,6 +41,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <MeetingTypeList/>
     </section>
   );
 };
