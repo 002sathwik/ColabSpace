@@ -5,10 +5,12 @@ import { useRouter } from "next/navigation";
 import MeetingModal from "../MeetingModal/MeetingModal";
 import { useUser } from "@clerk/nextjs";
 import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
-import Loder from "@/components/Loder/Loder";
+
+import { useToast } from "../ui/use-toast";
 const MeetingTypeList = () => {
+  const { toast } = useToast();
   const router = useRouter();
-  const [loading, setloading] = useState(false);
+
   const [MeetingState, setMeetingState] = useState<
     "isScheduleMeeting " | "isJoiningMeeting" | "isInstantMeeting" | undefined
   >();
@@ -26,7 +28,14 @@ const MeetingTypeList = () => {
   const createMeeting = async () => {
     if (!client || !user) return;
     try {
-      setloading(true)
+      if (!values.dateTime) {
+        toast({
+          variant: "destructive",
+          title: "Please select a date and  time",
+        });
+        return;
+      }
+
       const id = crypto.randomUUID();
       const call = client.call("default", id);
       if (!call) throw new Error("Failed to create call");
@@ -44,16 +53,19 @@ const MeetingTypeList = () => {
       setCallDetails(call);
       if (!values.description) {
         router.push(`/meeting/${call.id}`);
+        toast({
+          title: "New meeting created",
+        });
       }
-      setloading(false)
     } catch (error) {
       console.log(error);
+      toast({
+        variant: "destructive",
+        title: "Failed to create meeting",
+      });
     }
   };
 
-  if(loading){
-    return <Loder/>
-  }
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
       <HomeCard
