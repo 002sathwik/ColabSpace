@@ -10,6 +10,7 @@ import { useToast } from "../ui/use-toast";
 import { Textarea } from "../ui/textarea";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
+import Loader from "../Loder/Loder";
 const MeetingTypeList = () => {
   const { toast } = useToast();
   const router = useRouter();
@@ -68,6 +69,11 @@ const MeetingTypeList = () => {
       });
     }
   };
+  
+  if (!client || !user) return <Loader />;
+
+  const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`;
+
 
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
